@@ -1,0 +1,19 @@
+  function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+}
+
+console.info(formatNumber(2665));
+console.info(formatNumber(102665));
+console.info(formatNumber(111102665));
+  
+    
+    function currencyFormatDE(num) {
+  return (
+    num
+      .toFixed(2) // always two decimal digits
+      .replace('.', ',') // replace decimal point character with ,
+      .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + ' €'
+  ) // use . as a separator
+}
+
+console.info(currencyFormatDE(1234567.89)) // output 1.234.567,89 €
